@@ -1,3 +1,5 @@
+const NoSwearing = require("noswearing");
+
 var bannedUsers = {};
 const MAX_WARNINGS = 1;
 
@@ -28,11 +30,10 @@ module.exports = {
     bot.fetchUser(member.id).then(user => user.send('Your message has been deleted for profanity and logged.'));
   },
 
-  checkProfanity: function(message, bannedWords) {
-    var words = message.split(' ');
-    for (var word of words) {
-      if (bannedWords.indexOf(word) > -1) return true;
-    }
-    return false;
+  checkProfanity: function(message) {
+    var result = NoSwearing(message);
+    return result.every((word)=>{
+      return word.info == 2;
+    });
   },
 };
