@@ -33,6 +33,6 @@ module.exports = {
   checkProfanity: function(message) {
     var result = NoSwearing(message);
     for (var i = 0; i < result.length; i++)
-      if (result[i].info == 2) return result;
+      if (result[i].info == 2) return result[i];
   },
 };
