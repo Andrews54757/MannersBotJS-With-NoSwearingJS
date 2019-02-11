@@ -1,6 +1,8 @@
-# MannersBotJS
+# MannersBotJS + NoSwearing
 
 MannersBot is a bot to help keep your Discord servers clean from profanity. MannersBot will search messages sent to channels for profanity, deleting profane text and logging edited messages, deleted messages, and banned users to a special channel.
+
+profane text is detected through the NoSwearing module to make sure people cant evade the filter.
 
 MannersBot will also automatically ban users from your server on their second offense.
 
