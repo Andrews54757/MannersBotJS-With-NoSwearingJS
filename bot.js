@@ -25,15 +25,27 @@ bot.on('message', message => {
 });
 
 bot.on('messageDelete', message => {
+    try {
     Logging.logMessageDelete(message);
+    } catch(e) {
+console.log(e)
+    }
 });
 
 bot.on('messageUpdate', (oldMessage, newMessage) => {
+    try {
     Logging.logMessageUpdate(oldMessage, newMessage);
+    } catch(e) {
+console.log(e)
+    }
 });
 
 bot.on('guildBanAdd', (guild, user) => {
+    try {
     Logging.logUserBan(user, guild);
+    } catch(e) {
+console.log(e)
+    }
 });
 
 bot.on('error', console.error);
