@@ -36,4 +36,6 @@ bot.on('guildBanAdd', (guild, user) => {
     Logging.logUserBan(user, guild);
 });
 
+bot.on('error', console.error);
+
 bot.login(settings['BOT_LOGIN_TOKEN']);
