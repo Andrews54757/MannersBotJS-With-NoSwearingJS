@@ -27,7 +27,7 @@ module.exports = {
   getLoggingChannel: function(guild) {
     var loggingChannel = guild.channels.find(x => x.name === 'mannersbot-logging');
 
-    if (loggingChannel == null) {
+    if (loggingChannel === undefined) {
       var plebRoles = guild.roles.filter(x => x.hasPermission('MANAGE_MESSAGES'));
       var roleArray = [];
       for (var role of plebRoles) {
